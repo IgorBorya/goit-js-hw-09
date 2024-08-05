@@ -7,10 +7,10 @@ const messageInput = form.querySelector('textarea[name="message"]');
 const savedData = localStorage.getItem('feedback-form-state');
 if (savedData) {
   const parsedData = JSON.parse(savedData);
-  emailInput.value = parsedData.email;
-  messageInput.value = parsedData.message;
-  formData.email = parsedData.email;
-  formData.message = parsedData.message;
+  emailInput.value = parsedData.email || '';
+  messageInput.value = parsedData.message || '';
+  formData.email = parsedData.email || '';
+  formData.message = parsedData.message || '';
 }
 
 form.addEventListener('input', event => {
